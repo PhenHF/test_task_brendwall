@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static "js/index.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class='add_form-wrapper'>
+        <form id="add_form">
+            {% csrf_token %}
+            <div class="add_form-item">
+                <label for="id_name" class="add_form-item-label">Наименование</label>
+                <input type="text" name="name" id="id_name">
+            </div>
+            <div class="add_form-item">    
+                <label for="id_description" class="add_form-item-label">Описание</label>
+                <textarea type="text" name="description" id="id_description"></textarea>
+            </div>
+            <div class="add_form-item">    
+                <label for="id_price" class="add_form-item-label">Цена</label>
+                <input type="text-area" name="price" id="id_price">
+            </div>
+        </form>
+        <button class="add_form-btn">Добавить товар</button>
+    </div>
+
+    <table>
+        <tbody class="goods_table">
+            <th>Наименование</th>
+            <th>Описание</th>
+            <th>Цена</th>
+        </tbody>
+    </table>
+</body>
+</html>
